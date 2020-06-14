@@ -4,33 +4,31 @@
   "description": "vue-shop server",
   "private": true,
   "dependencies": {
-    "date-fns": "^1.30.1",
-    "egg": "^2.2.1",
-    "egg-mongoose": "^3.1.1",
-    "egg-scripts": "^2.5.0",
-    "utility": "^1.15.0"
+    "date-fns": "^2.14.0",
+    "egg": "^2.26.1",
+    "egg-mongoose": "^3.2.0",
+    "egg-scripts": "^2.13.0",
+    "utility": "^1.16.3"
   },
   "devDependencies": {
     "autod": "^3.0.1",
-    "autod-egg": "^1.0.0",
-    "egg-bin": "^4.3.5",
-    "egg-ci": "^1.8.0",
-    "egg-mock": "^3.14.0",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
     "eslint": "^5.16.0",
-    "eslint-config-egg": "^6.0.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.17.1",
-    "webstorm-disable-index": "^1.2.0"
+    "eslint-config-egg": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3"
   },
   "engines": {
-    "node": ">=8.9.0"
+    "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-shop",
-    "stop": "egg-scripts stop --title=egg-server-shop",
-    "dev": "egg-bin dev --port 9096",
-    "debug": "egg-bin debug --port 9096",
+    "start": "egg-scripts start --daemon --title=egg-server-example-new",
+    "stop": "egg-scripts stop --title=egg-server-example-new",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
@@ -39,7 +37,7 @@
     "autod": "autod"
   },
   "ci": {
-    "version": "8"
+    "version": "10"
   },
   "repository": {
     "type": "git",
