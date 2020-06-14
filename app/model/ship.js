@@ -1,20 +1,14 @@
-/*
- * @Author: Hale
- * @Description: ship 模型
- * @Date: 2019-05-17
- * @LastEditTime: 2019-05-21
- */
-module.exports = app => {
-  const { Schema } = app.mongoose
+module.exports = (app) => {
+  const { Schema } = app.mongoose;
 
   const ShipSchema = new Schema({
     ship: String,
     cost: String,
     isChecked: {
       type: Boolean,
-      default: false
-    }
-  })
+      default: false,
+    },
+  });
 
-  return app.mongoose.model('Ship', ShipSchema)
-}
+  return app.mongoose.model("Ship", ShipSchema);
+};

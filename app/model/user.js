@@ -1,12 +1,6 @@
-/*
- * @Author: Hale
- * @Description: user 模型
- * @Date: 2019-05-17
- * @LastEditTime: 2019-05-21
- */
-module.exports = app => {
-  const { Schema } = app.mongoose
-  const { ObjectId } = Schema.Types
+module.exports = (app) => {
+  const { Schema } = app.mongoose;
+  const { ObjectId } = Schema.Types;
 
   const UserSchema = new Schema({
     userId: String,
@@ -18,42 +12,42 @@ module.exports = app => {
         orderTotalPrice: Number,
         addressInfo: {
           type: ObjectId,
-          ref: 'Address'
+          ref: "Address",
         },
         shipInfo: {
           type: ObjectId,
-          ref: 'Ship'
+          ref: "Ship",
         },
         orderStatus: Number,
         goodsList: [
           {
             goods: {
               type: ObjectId,
-              ref: 'Goods',
-              required: true
+              ref: "Goods",
+              required: true,
             },
-            goodsNum: Number
-          }
+            goodsNum: Number,
+          },
         ],
         createDate: {
           type: Date,
-          default: Date.now()
-        }
-      }
+          default: Date.now(),
+        },
+      },
     ],
     cartList: [
       {
         goods: {
           type: ObjectId,
-          ref: 'Goods',
-          required: true
+          ref: "Goods",
+          required: true,
         },
         goodsNum: Number,
         isChecked: {
           type: Boolean,
-          default: false
-        }
-      }
+          default: false,
+        },
+      },
     ],
     addressList: [
       {
@@ -63,35 +57,35 @@ module.exports = app => {
         phone: String,
         isDefault: {
           type: Boolean,
-          default: false
+          default: false,
         },
         isChecked: {
           type: Boolean,
-          default: false
+          default: false,
         },
         meta: {
           createdAt: {
             type: Date,
-            default: Date.now()
+            default: Date.now(),
           },
           updateAt: {
             type: Date,
-            default: Date.now()
-          }
-        }
-      }
+            default: Date.now(),
+          },
+        },
+      },
     ],
     meta: {
       createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
       },
       updateAt: {
         type: Date,
-        default: Date.now()
-      }
-    }
-  })
+        default: Date.now(),
+      },
+    },
+  });
 
-  return app.mongoose.model('User', UserSchema)
-}
+  return app.mongoose.model("User", UserSchema);
+};
